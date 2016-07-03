@@ -36,4 +36,12 @@ export class AppComponent {
         error => console.log(error)
       )
   }
+
+  onPost(title:string, body: string, userId: string) {
+    this._httpService.createPost({title: title, body: body, userId: +userId})
+      .subscribe(
+        response => this.response = response,
+        error => console.log(error)
+      );
+  }
 }
